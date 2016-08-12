@@ -18,6 +18,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^register/$','app.views.register',name='reg')
-
+    url(r'^register/$','app.views.register',name='reg'),
+    url(r'^login.json/$','app.views.login',name='login'),
 ]
