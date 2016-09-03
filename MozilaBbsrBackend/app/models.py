@@ -22,7 +22,7 @@ class Quiz(models.Model):
     Uid = models.ForeignKey(UserDetail)
 
     def __str__(self):
-        return self.Qname
+        return str(self.Qid)
 
 
 class Questions(models.Model):

@@ -19,5 +19,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^register/$','app.views.register',name='reg'),
-    url(r'^login.json/$','app.views.login',name='login'),
+    url(r'^login/$','app.views.login',name='login'),
+    url(r'^create_quiz/$','app.views.createQiuz', name='createQuiz'),
+
 ]
