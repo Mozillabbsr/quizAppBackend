@@ -68,7 +68,7 @@ def login(request):
             return JsonResponse(context)
 
     else:
-        msg = "failed"
+        msg = "false_get"
         context = {'msg':msg}
         return JsonResponse(context)
 
