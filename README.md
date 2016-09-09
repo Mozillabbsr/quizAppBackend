@@ -64,3 +64,31 @@ Failed
   "msg": "failed",
 }
 ```
+
+###Crate Quiz
+
+Method : POST
+
+#####Endpoint 
+127.0.0.1:8000/create_quiz/
+
+#####Params 
+qname
+privacy
+uid
+session_key
+
+#####Json Response
+
+Success
+```json
+{ 
+
+}
+```
+Failed  
+```json
+{ 
+  
+}
+```
