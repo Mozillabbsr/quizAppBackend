@@ -54,8 +54,7 @@ Success
 { 
   "msg": "success",
   "mobile": 9898989898, 
-  "uid": "JohnSnow@gmail.com"
-  "session_key" : some hashed key
+  "uid": " JohnSnow@gmail.com"
 }
 ```
 Failed  
