@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^login/$','app.views.login',name='login'),
     url(r'^create_quiz/$','app.views.createQiuz', name='createQuiz'),
     url(r'^logout/$','app.views.logout',name = 'logout'),
+    url(r'^create_question/$','app.views.createQuestion',name='createQuestion'),
 
 ]
