@@ -114,12 +114,47 @@ def createQiuz(request):
 
     return JsonResponse(context)
 
-def create_question(request):
-
+@csrf_exempt
+def createQuestion(request):
+    #Qid
     if request.method == "POST":
-        pass
+        if request.session.session_key != request.GET['session_key']:
+            context = {'msg': 'failed'}
+            return JsonResponse(context)
+        try:
+            Answer = request.GET['Answer']
+            QuesDetail = request.GET['QuesDetail']
+            Opt1 = request.GET['Opt1']
+            Opt2 = request.GET['Opt2']
+            Opt3 = request.GET['Opt3']
+            Opt4 = request.GET['Opt4']
+            Hint = request.GET['Hint']
+            Time = request.GET['Time']
+            Qid = request.GET['Qid']
+
+            quizObj = Quiz.objects.get(Qid=Qid)
+            question = Questions(
+                Qid=quizObj,
+                QuesDetail=QuesDetail,
+                Answer=Answer,
+                Opt1=Opt1,
+                Opt2=Opt2,
+                Opt3=Opt3,
+                Opt4=Opt4,
+                Hint=Hint,
+                Time=Time
+            )
+            question.save()
+            Qsid = question.Qsid;
+            context = {
+                'msg':'Success',
+                'Qsid':Qsid
+            }
+        except:
+            context = {'msg':'Failed'}
+    else:
+        context = {'msg':'Failed'}
 
 
-
-    return JsonResponse()
+    return JsonResponse(context)
 
